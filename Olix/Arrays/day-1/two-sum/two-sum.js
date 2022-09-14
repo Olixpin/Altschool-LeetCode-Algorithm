@@ -14,6 +14,5 @@
         }
     }
 };
-const arr = [1, 2, 6, 3];
-console.log(twoSum(arr, 9));
+
 
