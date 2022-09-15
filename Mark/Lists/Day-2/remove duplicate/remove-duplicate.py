@@ -1,13 +1,20 @@
+
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
-        for num in nums:
-            if nums.count(num) > 1:
-                nums.remove(num)
-            else:
-                continue
-        return len(nums)
-        
+        dif_num=1
+        if nums==[]:
+            return 0
+
+        for i in range(len(nums)):
+            if(i+1<len(nums)):
+                if nums[i]<nums[i+1]:
+                    nums[dif_num]=nums[i+1]
+                    dif_num+=1
+            
+        print(nums)
+        return dif_num
+
 
 solution = Solution()
-output = solution.removeDuplicates([1,1,1,2,2,3,3,4,5])
+output = solution.removeDuplicates([1,1,1,1,1,1])
 print(output)
