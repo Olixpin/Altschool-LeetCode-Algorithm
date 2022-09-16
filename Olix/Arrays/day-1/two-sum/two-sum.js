@@ -13,6 +13,6 @@ var twoSum = function (nums, target) {
     hashMap[nums[i]] = i;
   }
   return;
-};
+}
 
 console.log(twoSum([3, 3], 6));
