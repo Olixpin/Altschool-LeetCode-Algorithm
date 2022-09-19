@@ -32,12 +32,12 @@ var plusOne = function (digits) {
         digits[i] = 0
     }
 
-    /*
-    create a variable newNum and increase the size of the array by 1
-    and also assign 1 to the 0th index, if the number is larger than
-    9. Then return the newNum
-    */
-    let newNum = new digits[j + 1]
-    newNum[0] = 1
-    return newNum
+    // /*
+    // create a variable newNum and increase the size of the array by 1
+    // and also assign 1 to the 0th index, if the number is larger than
+    // 9. Then return the newNum
+    // */
+    // let newNum = new digits[j + 1]
+    // newNum[0] = 1
+    // return newNum
 };
