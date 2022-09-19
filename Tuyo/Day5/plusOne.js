@@ -30,14 +30,10 @@ var plusOne = function (digits) {
 
         // if the number is larger than 9, set it to zero
         digits[i] = 0
+        
+        if (i == 0) {
+            digits.unshift(1)
+        }
     }
-
-    // /*
-    // create a variable newNum and increase the size of the array by 1
-    // and also assign 1 to the 0th index, if the number is larger than
-    // 9. Then return the newNum
-    // */
-    // let newNum = new digits[j + 1]
-    // newNum[0] = 1
-    // return newNum
+    return digits
 };
