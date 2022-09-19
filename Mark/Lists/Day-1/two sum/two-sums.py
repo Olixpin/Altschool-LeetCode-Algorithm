@@ -1,10 +1,12 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        for i in range(len(nums)):
-            j = i + 1
-            if nums[i] + nums[j] == target:
-                return [i, j]
-                break
+        y = len(nums)
+        for i in range(y):
+            h = i+1
+            f = nums[h:]
+            for x in range(len(f)):
+                if nums[i] + f[x] == target:
+                    return [i, x+h]
             else:
                 continue
 
@@ -12,6 +14,6 @@ class Solution:
 
                 
 solution = Solution()
-nums = [3,2,4]
+nums = [3,2,2,3]
 target = 6
 print(solution.twoSum(nums, target))
