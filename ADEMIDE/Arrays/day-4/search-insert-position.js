@@ -1,15 +1,21 @@
 /**
  * @param {number[]} nums
- * @param {number} val
+ * @param {number} target
  * @return {number}
  */
- var removeElement = function(nums, val) {
-    let a = 0;
-    for (let j = 0; j < nums.length; j++) {
-        if (nums[j] !== val) {
-            nums[a] = nums[j];
-            a++;
+ var searchInsert = function (nums, target) {
+    let left = 0;
+    let right = nums.length;
+
+    while (left < right) {
+        const middle = Math.floor((left + right) / 2);
+
+        if (nums[middle] < target) {
+            left = middle + 1;
+        } else {
+            right = middle;
         }
     }
-    return a;
+
+    return left;
 };
