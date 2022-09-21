@@ -1,29 +1,12 @@
-let arr = [
-  "one",
-  "two",
-  "two",
-  "three",
-  "three",
-  "three",
-  "four",
-  "four",
-  "four",
-  "four",
-  "five",
-  "five",
-  "five",
-  "five",
-  "five",
-  "six",
-  "six",
-  "six",
-  "six",
-  "six",
-  "six",
-];
+var removeDuplicates = function (nums) {
+  let uniqueCount = 1;
 
-function removeDuplicates(arr) {
-  return arr.filter((item, index) => arr.indexOf(item) === index);
-}
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] != nums[i - 1]) {
+      nums[uniqueCount] = nums[i];
+      uniqueCount += 1;
+    }
+  }
 
-console.log(removeDuplicates(arr));
+  return uniqueCount;
+};

@@ -1,18 +1,27 @@
-let arr = [];
-let k;
+var searchInsert = function (nums, target) {
+  let result = 0;
 
-function search(arr, k) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === k) {
-      return i;
-    } else {
-      if (arr[i] < k) {
-        arr.push(k);
-      } else {
-        arr.unshift(k);
-      }
+  if (nums.length === 1 && target > nums[0]) {
+    return 1;
+  }
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (target == nums[i]) {
+      result = i;
+      break;
+    } else if (target > nums[i] && target <= nums[i + 1]) {
+      result = i + 1;
+      break;
+    } else if (target > nums[i + 1] && nums.length - 1 == i + 1) {
+      result = nums.length;
+      break;
+    } else if (target < nums[i] && i == 0) {
+      result = 0;
+      break;
+    } else if (target > nums[i] && target > nums[i + 1]) {
+      continue;
     }
   }
-}
 
-search([1, 2, 3, 5, 6, 7], 4);
+  return result;
+};
