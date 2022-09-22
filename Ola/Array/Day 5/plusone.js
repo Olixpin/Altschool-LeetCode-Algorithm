@@ -14,4 +14,3 @@ var plusOne = function(digits) {
   digits.unshift(1)
   return digits;
 };
-console.log(plusOne(digits));
