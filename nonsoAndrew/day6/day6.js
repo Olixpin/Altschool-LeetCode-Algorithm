@@ -5,6 +5,11 @@
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
+
+let nums1 = [1, 2, 3, 0, 0, 0];
+let nums2 = [2, 5, 6];
+let m = 3;
+let n = 3;
 var merge = function (nums1, m, nums2, n) {
 	//m denotes the length of elements thats is needed in nums1
 	//n denotes the length of elements not needed in nums2
@@ -13,4 +18,21 @@ var merge = function (nums1, m, nums2, n) {
 
 	nums1.splice(m, n, ...nums2);
 	return nums1.sort((a, b) => a - b);
+
+	//USING WHILE LOOP TO ITERATE AND REPLACE
+
+
+	let p = 0;
+
+	while (n > 0) {
+		nums1[m] = nums2[p];
+		p++;
+		m++;
+		n--;
+	}
+	nums1.sort((a, b) => a - b);
 };
+
+merge(nums1, m, nums2, n);
+
+console.log(nums1);
