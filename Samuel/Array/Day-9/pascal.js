@@ -10,4 +10,4 @@ var generate = function(numRows) {
         ans[i] = row
     }
     return ans
-};
+}
