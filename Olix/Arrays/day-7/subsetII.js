@@ -1,12 +1,12 @@
 var subsetsWithDup = function (nums) {
   nums.sort((a, b) => a - b);
   const result = [];
-  const subset = [];
+  let subset = [];
 
-  const backtrack = (start) => {
+  const backtrack = (index) => {
     result.push([...subset]);
-    for (let i = start; i < nums.length; i++) {
-      if (i > start && nums[i] === nums[i - 1]) continue;
+    for (let i = index; i < nums.length; i++) {
+      if (nums[i] === nums[i - 1] && i > index) continue;
       subset.push(nums[i]);
       backtrack(i + 1);
       subset.pop();
